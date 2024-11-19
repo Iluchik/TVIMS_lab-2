@@ -27,10 +27,10 @@ def properties(df, x):
 	percent_point_2_5 = np.quantile(df[x], .975)
 	return {"M_x": M_x,"var": var,"symmetry": symmetry,"excess": excess,"quants": [quant0_05, quant0_95],"percent_point": percent_point_2_5}
 
-# Municipal_properties = properties(df, "Municipal_count")
-# sns.displot(df, x="Municipal_count", kind="kde", bw_adjust=.9, cut=0, color="cyan")
-# sns.lineplot(df, x="Municipal_count", y=sp.norm.pdf(df["Municipal_count"], Municipal_properties["M_x"], np.sqrt(Municipal_properties["var"])), color="red")
-# plt.gcf().set_size_inches(10,6)
-# plt.show()
+Municipal_properties = properties(df, "Municipal_count")
+sns.displot(df, x="Municipal_count", kind="kde", bw_adjust=.9, cut=0, color="cyan")
+sns.lineplot(df, x="Municipal_count", y=sp.norm.pdf(df["Municipal_count"], Municipal_properties["M_x"], np.sqrt(Municipal_properties["var"])), color="red")
+plt.gcf().set_size_inches(10,6)
+plt.show()
 demo_properties = properties(df_demo, "Demo_count")
 print(df_demo)
