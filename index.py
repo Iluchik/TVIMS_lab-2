@@ -33,4 +33,4 @@ sns.lineplot(df, x="Municipal_count", y=sp.norm.pdf(df["Municipal_count"], Munic
 plt.gcf().set_size_inches(10,6)
 plt.show()
 demo_properties = properties(df_demo, "Demo_count")
-print(df_demo)
+print(demo_properties)
